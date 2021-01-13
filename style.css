@@ -107,7 +107,7 @@ html {
   color: crimson;
 }
 .navbar.sticky .menu li a:hover {
-  color: #fff;
+  color: crimson;
 }
 
 /* menu btn styling */
@@ -154,7 +154,7 @@ section#home {
 }
 
 h1 {
-  font-size: 128px;
+  font-size: 13.5vh;
   color: #fff;
   text-align: left;
 }
@@ -178,67 +178,185 @@ section#about {
   padding: 20rem 20%;
   border-top: crimson 10px solid;
   border-right: crimson 10px solid;
+  border-left: crimson 10px solid;
 }
 
 #about .right {
-    text-align: right;
+  text-align: right;
 }
 
 #about a {
-    color: crimson;
-    text-decoration: underline;
+  color: crimson;
+  text-decoration: underline;
 }
 
 #about span {
-    color: crimson;
+  color: crimson;
 }
 
-/* services */ 
+/* services */
 
 .grid-container {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  gap: 32px 32px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-areas:
+    ". . . ."
+    ". Card1 Card2 ."
+    ". Card3 Card4 ."
+    ". . . .";
+}
+.Card1 {
+  grid-area: Card1;
+  border: 3px crimson solid;
+}
+.Card2 {
+  grid-area: Card2;
+  border: 3px crimson solid;
+}
+.Card3 {
+  grid-area: Card3;
+  border: 3px crimson solid;
+}
+.Card4 {
+  grid-area: Card4;
+  border: 3px crimson solid;
+}
+
+.grid-container * {
+  transition: 500ms;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  padding: 5%;
+}
+
+.grid-container i {
+  padding: 5%;
+  font-size: 128px;
+  color: rgb(190, 190, 190);
+}
+
+.grid-container div:hover {
+  -webkit-transform: scale(1.05);
+  transition: 500ms;
+  background-color: crimson;
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 50px;
+  color: #fff;
+  background-color: black;
+  box-shadow: 0px 1px 1px crimson, 0px 2px 10px crimson;
+}
+
+.footer > * {
+  flex: 1 100%;
+  overflow: hidden;
+}
+
+.l-footer {
+  margin-right: 1.25em;
+  margin-bottom: 2em;
+}
+
+footer h2 {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.r-footer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.r-footer > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.box a {
+  color: #fff;
+}
+
+.h-box {
+  column-count: 2;
+  column-gap: 1.25em;
+}
+
+.b-footer {
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.l-footer p {
+  padding-right: 20%;
+  color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+  .footer a {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .r-footer > * {
+    flex: 1;
+  }
+
+  .features {
+    flex-grow: 2;
+  }
+
+  .l-footer {
+    flex: 1 0px;
+  }
+
+  .r-footer {
+    flex: 2 0px;
+  }
+}
+
+@media (max-width: 947px) {
+  .grid-container {
     background-color: black;
     height: 100vh;
     width: 100%;
     gap: 32px 32px;
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-    grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+    grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
     grid-template-areas:
       ". . . ."
       ". Card1 Card2 ."
       ". Card3 Card4 ."
       ". . . .";
   }
-  .Card1 { 
-      grid-area: Card1; 
-      border: 3px crimson solid;
-}
-  .Card2 { grid-area: Card2; 
-    border: 3px crimson solid;}
-  .Card3 { grid-area: Card3; 
-    border: 3px crimson solid;}
-  .Card4 { grid-area: Card4; 
-    border: 3px crimson solid;}
 
-.grid-container * {
-    font-size: 24px;
-    text-align: center;
-    color: #fff;
-    padding: 5%;
-}
-
-.grid-container i {
-    padding: 5%;
-    font-size: 128px;
-    color: gray;
-}
-
-.grid-container div:hover {
-    -webkit-transform: scale(1.05);
-    transition: 500ms;
-}
-
-@media (max-width: 947px) {
   .menu-btn {
     display: block;
     z-index: 999;
@@ -274,11 +392,59 @@ section#about {
     margin: 20px 0;
     font-size: 25px;
   }
+
+  .footer a {
+    font-size: 10px;
+  }
+
+  .footer i {
+    font-size: 10px;
+  }
+
+  .footer {
+    padding: 5%;
+  }
 }
 
 @media (max-width: 690px) {
+  section#about {
+    font-size: 22px;
+  }
+
+  .grid-container {
+    padding-bottom: 10vh;
+    padding-top: 10vh;
+    background-color: black;
+    height: auto;
+    width: 100%;
+    gap: 32px 32px;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
+    grid-template-areas:
+      ". Card1 ."
+      ". Card2 ."
+      ". Card3 ."
+      ". Card4 .";
+  }
+
   .max-width {
     padding: 0 23px;
+  }
+
+  .grid-container i {
+    font-size: 86px;
+  }
+
+  h1 {
+    font-size: 10vh;
+    padding-top: 10vh;
+  }
+
+  section#about {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    padding: 20rem 20%;
+    padding-bottom: 10vh;
   }
 }
 
@@ -290,5 +456,13 @@ section#about {
     width: 35px;
     font-size: 23px;
     line-height: 38px;
+  }
+
+  .grid-container * {
+    transition: 500ms;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 5%;
   }
 }
